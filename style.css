@@ -1,0 +1,244 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(#ffccff, #cc99ff);
+	height: 100vh;
+}
+
+.sence{
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 30vw;
+	height: 400px;
+}
+
+.head{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 380px;
+	height: 380px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+.ear{
+	position: absolute;
+	top: 0;
+	left: -5%;
+	width: 8rem;
+	height: 8rem;
+	background-color: #000;
+	border-radius: 50%;
+	z-index: -1;
+}
+.ear.right{	
+	left: 75%;
+}
+
+.eye{
+	position: absolute;
+	width: 5rem;
+	height: 8rem;
+	background-color: #000;
+	border-radius: 50%;
+	top: 20%;
+	left: 15%;
+	transform: rotateZ(20deg);
+}
+
+.eye.right{
+	left: 60%;
+	transform: rotateZ(-20deg);
+}
+
+.eye::before, .eye::after{
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	top: 20%;
+	left: 15%;
+	border-radius: 50%;
+	transform: rotate(-20deg);
+	
+}
+
+.eye.left::before{
+	left: auto;
+	right: 15%;	
+}
+
+.eye::after{
+	width: 20px;
+	height: 20px;
+	background-color: #000;
+	top: 30%;
+	left: 25%;
+}
+
+.eye.left::after{
+	left: 50%;
+}
+.head::before{
+	content: '';
+	position: absolute;
+	width: 5rem;
+	height: 4rem;
+	background-color: #000;
+	border-radius: 60px;
+	top: 50%;
+	left: 37%;	
+}
+
+.head::after{
+	content: '';
+	position: absolute;
+	width: 10rem;
+	height: 5rem;
+	border-radius: 50%;
+	border-bottom: 4px solid;
+	top: 60%;
+	left: 28%;
+	
+}
+
+.lf:hover~.sence .eye.left::after{
+	animation: LeftEyeToLeft  ease-in-out 1s both;
+}
+
+.lf:hover~.sence .eye.right::after{
+	animation: RightEyeToLeft  ease-in-out 1s both;
+}
+
+.rt:hover~.lf~.sence .eye.right::after{
+	animation: RightEyeToRight  ease-in-out 1s both;
+}
+
+.rt:hover~.lf~.sence .eye.left::after{
+	animation: LeftEyeToRight  ease-in-out 1s both;
+}
+
+.lf, .rt, .blf, .brt{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+}
+
+.rt{
+	right: 0;
+}
+
+.blf,.brt{
+	top: 49.99%;
+}
+
+.brt{
+	right:0;
+}
+
+
+
+.blf:hover~.lf~.sence .eye.left::after{
+	animation: bLeftEyeToLeft  ease-in-out 1s both;
+}
+
+.blf:hover~.lf~.sence .eye.right::after{
+	animation: bRightEyeToLeft  ease-in-out 1s both;
+}
+
+.brt:hover~.blf~.rt~.lf~.sence .eye.right::after{
+	animation: bRightEyeToRight  ease-in-out 1s both;
+}
+
+.brt:hover~.blf~.rt~.lf~.sence .eye.left::after{
+	animation: bLeftEyeToRight  ease-in-out 1s both;
+}
+
+/*top squires animation*/
+@keyframes LeftEyeToLeft{
+	0%{
+		transform: rotate(-20deg) translateX(0);
+	}
+	
+	100%{
+		transform: rotate(-20deg) translateX(-8px) ;
+	}
+}
+
+@keyframes LeftEyeToRight{
+	0%{
+		transform: rotate(-20deg) translateX(0);
+	}
+	
+	100%{
+		transform: rotate(-20deg) translateX(8px) ;
+	}
+}
+
+@keyframes RightEyeToRight{
+	0%{
+		transform: rotate(20deg) translateX(0);
+	}
+	
+	100%{
+		transform: rotate(20deg) translateX(8px) ;
+	}
+}
+
+@keyframes RightEyeToLeft{
+	0%{
+		transform: rotate(20deg) translateX(0);
+	}
+	
+	100%{
+		transform: rotate(20deg) translateX(-8px) ;
+	}
+}
+
+
+
+/*bottom squires animation*/
+@keyframes bLeftEyeToLeft{
+	0%{
+		transform: rotate(-20deg) translate(0);
+	}
+	
+	100%{
+		transform: rotate(-20deg) translate(-5px, 4px) ;
+	}
+}
+
+@keyframes bLeftEyeToRight{
+	0%{
+		transform: rotate(-20deg) translateX(0);
+	}
+	
+	100%{
+		transform: rotate(-20deg) translate(5px, 4px) ;
+	}
+}
+
+@keyframes bRightEyeToRight{
+	0%{
+		transform: rotate(20deg) translate(0);
+	}
+	
+	100%{
+		transform: rotate(20deg) translate(5px, 5px) ;
+	}
+}
+
+@keyframes bRightEyeToLeft{
+	0%{
+		transform: rotate(20deg) translate(0);
+	}
+	
+	100%{
+		transform: rotate(20deg) translate(-5px, 5px) ;
+	}
+}
