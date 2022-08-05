@@ -1,5 +1,5 @@
-# Drawing A banda head Using Only HTML and CSS
-Drawing A banda head width eyes tracking mouse pointer Using Only HTML and CSS.
+# Drawing Using HTML and CSS
+Drawing a banda head width eyes tracking pointer movement using HTML and CSS only.
 
 Live demo link: https://hafus.github.io/banda/
 
